@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="cal.js"></script>
+   <style>
+        #main{
+            height:500px;
+            position:relative;
+        }
+        #main #n{            
+            height:300px;
+            position:absolute;
+            top:100px; 
+            left:500px;     
+        }  
+        #e1,#e{
+            background-color: orange;
+        } 
+        button{
+            border:0px solid red;
+        }  
+        table{
+            border-radius: 10px;
+        } 
+        #r9,#r6,#r3,#ro,#r1,#r2,#r4,#r5,#r7,#r8,#CE,#r0,#add,#div,#mul,#sub{
+            width:40px;
+        }  
+        h3{
+            text-align:right;
+        }      
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="w-25" id="n">
+          <table class="" border="all" >
+             <tr>
+                 <td colspan="4" class="bg-dark">
+                     <h3 id="output">result</h3>
+                 </td>
+             </tr>
+             <tr>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="add">+</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="sub">-</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="mul">*</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="div">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-light">
+                    <button class="btn bg-light" id="r7">7</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r8">8</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r9">9</button>
+                </td>
+                <td rowspan="4" class="bg-muted" id="e1">
+                    <button class="btn" id="e">=</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r4">4</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r5">5</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r6">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r1">1</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r2">2</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r3">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r0">0</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="ro">.</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="CE">CE</button>
+                </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+   <style>
+        #main{
+            height:500px;
+            position:relative;
+        }
+        #main #n{            
+            height:300px;
+            position:absolute;
+            top:100px; 
+            left:500px;     
+        }  
+        #e1,#e{
+            background-color: orange;
+        } 
+        button{
+            border:0px solid red;
+        }  
+        table{
+            border-radius: 10px;
+        } 
+        #r9,#r6,#r3,#ro,#r1,#r2,#r4,#r5,#r7,#r8,#CE,#r0,#add,#div,#mul,#sub{
+            width:40px;
+        }  
+        h3{
+            text-align:right;
+            overflow: hidden;
+        }      
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="w-25" id="n">
+          <table class="" border="all" >
+             <tr>
+                 <td colspan="4" class="bg-dark">
+                     <h3 class="text-white"id="output">result</h3>
+                 </td>
+             </tr>
+             <tr>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="add">+</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="sub">-</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="mul">*</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn w-100" id="div">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-light">
+                    <button class="btn bg-light" id="r7">7</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r8">8</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r9">9</button>
+                </td>
+                <td rowspan="4" class="bg-muted" id="e1">
+                    <button class="btn" id="e">=</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r4">4</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r5">5</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r6">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r1">1</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r2">2</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r3">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="r0">0</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="ro">.</button>
+                </td>
+                <td class="bg-muted">
+                    <button class="btn bg-light" id="CE">CE</button>
+                </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    <p id="n00"></p>
+     <script>
+        var str="";
+        document.querySelector('#r9').addEventListener('click',
+        function fn()
+        {
+            let a=document.getElementById('r9').innerHTML;
+            f(a);
+        });
+
+        document.querySelector('#r8').addEventListener('click',function fn(){
+                let a=document.getElementById('r8').innerHTML;
+                 f(a);
+        });
+        document.querySelector('#r7').addEventListener('click',function fn()
+        {
+                let a=document.getElementById('r7').innerHTML;
+                f(a);
+         });
+         document.querySelector('#r6').addEventListener('click',function fn()
+         {
+                let a=document.getElementById('r6').innerHTML;
+                f(a);
+         });
+         document.querySelector('#r5').addEventListener('click',function fn()
+         {
+                 let a=document.getElementById('r5').innerHTML;
+                  f(a);
+         });
+         document.querySelector('#r4').addEventListener('click',function fn()
+         {
+                    let a=document.getElementById('r4').innerHTML;
+                    f(a);
+         });
+         document.querySelector('#r3').addEventListener('click',function fn()
+         {
+                    let a=document.getElementById('r3').innerHTML;
+                    f(a);
+         });
+        document.querySelector('#r2').addEventListener('click',function fn()
+        {
+            let a=document.getElementById('r2').innerHTML;
+             f(a);
+        });
+        document.querySelector('#r1').addEventListener('click',function fn()
+        {
+            let a=document.getElementById('r1').innerHTML;
+             f(a);
+        });
+        document.querySelector('#r0').addEventListener('click',function fn()
+        {
+            let a=document.getElementById('r0').innerHTML;
+              f(a);
+        });
+        document.querySelector('#ro').addEventListener('click',function fn()
+        {
+            let a=document.getElementById('ro').innerHTML;
+             fn(a);
+        });
+        document.querySelector('#CE').addEventListener('click',function era()
+        {
+            let a=document.getElementById('r9').innerHTML;
+            erase();
+        });
+
+        document.querySelector("#add").addEventListener('click',function inc()
+        {
+            let a=document.getElementById('add').innerHTML;
+            f(a);
+        });
+        document.querySelector("#sub").addEventListener('click',function inc()
+        {
+            let a=document.getElementById('sub').innerHTML;
+              f(a);
+        });
+        document.querySelector("#mul").addEventListener('click',function inc()
+        {
+            let a=document.getElementById('mul').innerHTML;
+            f(a);
+        });
+        document.querySelector("#div").addEventListener('click',function inc()
+        {
+            let a=document.getElementById('div').innerHTML;
+            f(a);
+        });
+        document.querySelector("#e").addEventListener('click',function caa()
+        {
+            let a=document.getElementById('e').innerHTML;
+              cal(a);
+        });
+
+        function erase(){
+            str="";
+            document.getElementById("output").innerHTML="result";
+        }
+
+        function f(a)
+        {
+            //str=document.getElementById("output").innerHTML;
+            if(str=="")
+                str="";
+            str=str+a;
+            document.getElementById("output").innerHTML=str;  
+        }
+        function cal(){
+           /* var a=[];
+            var i=0;
+            var output;
+            var result=Number.MAX_VALUE;
+            a[0]="";
+            for(var i1 of str)
+            {
+                if(i1=="+" || i1=="-" || i1=="*" || i1=="/")
+                {
+                    i++;
+                    a[i]="";
+                    continue;
+                }
+                a[i]=a[i]+i1;
+            }
+            for(var j=0;j<a.length;j++)
+            {
+                a[j]=parseInt(a[j]);
+                console.log(typeof a[j]);
+            }
+            result=a[0];
+            var k=0; 
+            var sum;
+            for(var i4 of a)
+            {
+                  sum=Number(sum+i4);
+            }
+            console.log(sum);
+            for(var i3 of str)
+            {
+                k++;     
+                if(i3=="+" || i3=="-" || i3=="*" || i3=="/")
+                {
+                    if(i3=="+")
+                    {
+                       result=Number(result+(a[k]));
+                    }
+                    if (i3=="-") {
+                        result=Number(result-(a[k]));              
+                    }
+                    if (i3=="*") {
+                        result=Number(result*(a[k]));
+                    }
+                    if(i3=="/")
+                    {
+                        result=Number(result/a[k]);
+                    }
+                }
+            }
+            console.log(result);*/
+            document.getElementById("output").innerHTML=eval(str);
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+<!-- function ni(b){
+    str=str+a[i]+b;
+    document.getElementById("output").innerHTML=str;
+    i++;
+    cocole.log(i);
+}
+
+function erase(){
+   a[i]="";
+}
+
+function f(a)
+{
+    a[i]=""+a[i]+a;
+    document.getElementById("output").innerHTML=a[i];  
+}
+function cal(){
+    result=parseInt(a[0]);
+
+    for(var i1 of str)
+    {
+        
+        i++;
+        if(i1=="+" || i1=="-" || i1=="*" || i1=="/")
+        {
+            if(i1=="+")
+            {
+               result=result+parseInt(a[i]);
+            }
+            else if (i1=="-") {
+                result=result-parseInt(a[i]);               
+            } else if (i1=="*") {
+                result=result*parseInt(a[i]);
+            } else {
+                result=result/parseInt(a[i]);
+            }
+        }
+    }
+    document.getElementById("output").innerHTML=result;
+} -->

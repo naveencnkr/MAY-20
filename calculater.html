@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Calci</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 60%;
+    height: 100;
+    /* border: 2px solid crimson; */
+}
+.form-control{
+    display: block;
+    font-size: 50px;
+}
+.btn{
+    display: block;
+    float: left;
+    border: 1px solid white;
+    padding: 15px;
+    width: 25%;
+    height: 16%;
+}
+.main{
+    width: 125%;
+    height: 94%;
+    border-radius: 40px;
+    overflow: auto;
+    box-shadow: 10px 10px 5px #4d4b4b;
+}
+h1{
+    font-size: 60px;
+    position: relative;
+    left: 60px;
+}
+    </style>
+</head>
+<body>
+    <div class="container bg-sucess">
+        <div class="row justify-content-center py-5">
+            <div class="col-sm-6">
+                <h1 class="text-center">Calculator</h1><br>
+                <form action="#" name="calculator" class="main">
+                    <input type="text" class="display form-control bg-dark text-white text-right" id="display" placeholder="0">
+                    
+                    <input type="button" class="btn btn-danger" value="CE" id="clear">
+                    <input type="button" class="btn btn-info" value="<--" onclick="backspace()">
+                    <input type="button" class="btn btn-info" value="%" onclick="operator('%')">
+                    <input type="button" class="btn btn-info" value="/" onclick="operator('/')">
+                    
+                    <input type="button" class="btn btn-dark" value="7" onclick="number('7')">
+                    <input type="button" class="btn btn-dark" value="8" onclick="number('8')">
+                    <input type="button" class="btn btn-dark" value="9" onclick="number('9')">
+                    <input type="button" class="btn btn-info" value="x" onclick="operator('*')">
+
+                    <input type="button" class="btn btn-dark" value="4" onclick="number('4')">
+                    <input type="button" class="btn btn-dark" value="5" onclick="number('5')">
+                    <input type="button" class="btn btn-dark" value="6" onclick="number('6')">
+                    <input type="button" class="btn btn-info" value="-" onclick="operator('-')">
+
+                    <input type="button" class="btn btn-dark" value="1" onclick="number('1')">
+                    <input type="button" class="btn btn-dark" value="2" onclick="number('2')">
+                    <input type="button" class="btn btn-dark" value="3" onclick="number('3')">
+                    <input type="button" class="btn btn-info" value="+" onclick="operator('+')">
+
+                    <input type="button" class="btn btn-dark" value="0" onclick="number('0')">
+                    <input type="button" class="btn btn-dark" value="00" onclick="operator('00')">
+                    <input type="button" class="btn btn-dark" value="." onclick="operator('.')">
+                    <input type="button" class="btn btn-warning" value="=" id="equal" onclick="document.calculator.display.value = eval(calculator.display.value)">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script >
+        document.querySelector("#clear").addEventListener('click', ()=>{
+    document.querySelector('#display').value = "";
+})
+
+//  Backspace Function
+const backspace = () => {
+    const backspaces = document.querySelector("#display").value.slice(0, -1);
+    document.querySelector("#display").value = backspaces;
+}
+
+//  Operator Function
+
+function operator(input){
+    document.calculator.display.value += input;
+}
+
+//  Number Function
+
+function number(num){
+    if(document.calculator.display.value == ' '){
+        document.calculator.display.value = num;
+    }
+    else{
+        document.calculator.display.value += num;
+    }
+}
+    </script>
+</body>
+</html>
